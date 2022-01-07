@@ -1,0 +1,64 @@
+<div class="container">
+  {% paginate collection.products by 2 %}
+    <div class="row my-5">
+      <h1 class="text-center">{{ collection.title }}</h1>
+    </div>
+
+    <div class="row justify-content-center">
+      <select name="" id="sort_by" class="form-select form-select-sm w-50">
+        {% for option in collection.sort_options %}
+          <option value="{{ option.value }}" 
+            {% if option.value == collection.sort_by %}
+              selected
+          {% endif %}>{{ option.name }}</option>          
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="d-flex flex-column flex-md-row my-3">
+      {% for product in collection.products %}
+        {% assign image = product.featured_media.preview_image %}
+        <div class="col g-2">
+          <div class="card mx-auto" style="width: 18rem;">
+            {% if image != blank %}
+            <img class="card-img-top" src="{{ image | img_url: 'medium' }}" alt="{{ product.title }}">
+            {% else %}
+            {{ 'product-1' | placeholder_svg_tag: 'card-img-top' }}
+            {% endif %}
+            <div class="card-body">
+              <h3>
+                <a href="{{ product.url }}">{{ product.title }}</a>
+              </h3>
+              <p>{{ product.price | money }}</p>
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <p>no matches</p>
+      {% endfor %}
+    </div>
+
+    {% if paginate.pages > 1 %}
+      <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center px-0">
+          {% if paginate.previous.is_link %}
+            <li class="page-item"><a class="page-link" href="{{ paginate.previous.url }}">{{ paginate.previous.title }}</a></li>
+          {% endif %}
+
+          {% for part in paginate.parts %}
+            {% if part.is_link %}
+              <li class="page-item"><a class="page-link" href="{{ part.url }}">{{ part.title }}</a></li>          
+            {% else %}
+              <li class="page-item disabled"><a class="page-link" href="{{ part.url }}">{{ part.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+
+          {% if paginate.next.is_link %}
+            <li class="page-item"><a class="page-link" href="{{ paginate.next.url }}">{{ paginate.next.title }}</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    {% endif %}
+
+  {% endpaginate %}
+</div>
