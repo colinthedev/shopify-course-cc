@@ -1,6 +1,24 @@
 {
-  "current": "Default",
+  "current": {
+    "navbar_color": "#1878b9",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+        }
+      },
+      "page-faq-template": {
+        "type": "page-faq-template",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
   "presets": {
-    "Default": { }
+    "Default": {
+    }
   }
 }
