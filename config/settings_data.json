@@ -1,7 +1,5 @@
 {
   "current": {
-    "navbar_color": "#13e946",
-    "checkout_accent_color": "#6fabd4",
     "nav_bg_color_primary": "#759781",
     "nav_bg_color_sec": "#85c73c",
     "nav_bg_color_tertiary": "#414973",
@@ -10,6 +8,8 @@
     "bg_color_primary": "#ec90e6",
     "bg_color_sec": "#57cc25",
     "bg_color_tertiary": "#4071d6",
+    "checkout_accent_color": "#6fabd4",
+    "navbar_color": "#13e946",
     "heading_font_size": 22,
     "color_primary": "#cf1f1f",
     "color_sec": "#2253b9",
