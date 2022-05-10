@@ -13,9 +13,9 @@
       <div class="col">
         <div class="card shadow">
           {% if article.image.src != null %}
-            <img src="{{ article.image.src | img_url: 'large' }}" alt="{{ article.image.alt }}">
+            <img src="{{ article.image.src | image_url }}" alt="{{ article.image.alt }}">
             {% else %}
-              {{ 'image'| placeholder_svg_tag: 'card-img-top' }}
+              {{ 'image' | placeholder_svg_tag: 'card-img-top' }}
           {% endif %}
           <div class="card-body">
             <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>

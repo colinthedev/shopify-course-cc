@@ -1,6 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<style>
+.font_color_1 {
+    color: {{ settings.nav_font_color_primary }};
+}
+
+.font_color_2 {
+    color: {{ settings.nav_font_color_secondary }};
+}
+
+.custom-font {
+    font-family: {{ section.settings.heading_font.family }};
+    font-style: {{ section.settings.heading_font.style }};
+    font-weight: {{ section.settings.heading_font.weight }};
+}
+
+.custom-font-size {
+    font-size: {{ section.settings.heading_font_size }}px;
+}
+</style>
+
+<nav class="nav-background-{{ section.settings.nav_background_color }} custom-font custom-font-size navbar navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand custom-font-size" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -11,21 +31,21 @@
                     {% assign child_list_handle = link.title | handleize %}
                     {% if linklists[child_list_handle].links != blank %}
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ link.url }}">{{ link.title }}</a>
+                            <a class="nav-link active {{ section.settings.font_color }}" aria-current="page" href="{{ link.url }}">{{ link.title }}</a>
                         </li>
                         [{% for childlink in linklists[child_list_handle].links %}
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                            <a class="nav-link active {{ section.settings.font_color }}" href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
                         </li>
                     {% endfor %}]
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ link.url }}">{{ link.title }}</a>
+                            <a class="nav-link active {{ section.settings.font_color }}" href="{{ link.url }}">{{ link.title }}</a>
                         </li>
                     {% endif %}
                 {% endfor %}
                 <li class="nav-item">
-                    <a class="nav-link" href="/cart">cart</a>
+                    <a class="nav-link {{ section.settings.font_color }}" href="/cart">cart</a>
                 </li>
             </ul>
         </div>
@@ -41,3 +61,64 @@
         {{ 'register' | customer_register_link }}
     {% endif %}
 {% endif %}
+
+{% schema %}
+{
+    "name": "Header-Nav",
+    "class": "header-section",
+    "settings": [
+          {
+            "type": "font_picker",
+            "id": "heading_font",
+            "label": "Heading font",
+            "default": "helvetica_n4"
+          },
+          {
+            "type": "range",
+            "id": "heading_font_size",
+            "min": 12,
+            "max": 24,
+            "step": 1,
+            "unit": "px",
+            "label": "Font size",
+            "default": 16
+          },
+          {
+            "type": "select",
+            "id": "font_color",
+            "label": "Font Color",
+            "options": [
+              {
+                "value": "font_color_1",
+                "label": "Color 1"
+              },
+              {
+                "value": "font_color_2",
+                "label": "Color 2"
+              }
+            ],
+            "default": "font_color_1"
+          },
+          {
+            "type": "select",
+            "id": "nav_background_color",
+            "label": "Nav Background Color",
+            "options": [
+              {
+                "value": "light",
+                "label": "Nav Background Color Light"
+              },
+              {
+                "value": "dark",
+                "label": "Nav Background Color Dark"
+              },
+              {
+                "value": "brand",
+                "label": "Nav Background Brand Color"
+              }
+            ],
+            "default": "brand"
+          }
+    ]
+}
+{% endschema %}

@@ -21,7 +21,7 @@
         <div class="col g-2">
           <div class="card mx-auto" style="width: 18rem;">
             {% if image != blank %}
-            <img class="card-img-top" src="{{ image | img_url: 'medium' }}" alt="{{ product.title }}">
+            <img class="card-img-top" src="{{ image | image_url }}" alt="{{ product.title }}">
             {% else %}
             {{ 'product-1' | placeholder_svg_tag: 'card-img-top' }}
             {% endif %}

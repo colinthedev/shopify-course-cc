@@ -15,31 +15,31 @@
 
 {% schema %}
 {
-    "name": "Page settings",
-    "settings": [
+  "name": "Page settings",
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Layout",
+      "options": [
         {
-            "type": "select",
-            "id": "container",
-            "label": "Layout",
-            "options": [
-                {
-                    "value": "container",
-                    "label": "Container"
-                },
-                {
-                    "value": "container-fluid",
-                    "label": "Container Fluid"
-                }
-            ],
-            "default": "container"
+          "value": "container",
+          "label": "Container"
         },
         {
-            "type": "checkbox",
-            "id": "show_publish_date",
-            "default": true,
-            "label": "Show Publish Date"
+          "value": "container-fluid",
+          "label": "Container Fluid"
         }
-    ]
+      ],
+      "default": "container"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_publish_date",
+      "default": true,
+      "label": "Show Publish Date"
+    }
+  ]
 }
 {% endschema %}
 

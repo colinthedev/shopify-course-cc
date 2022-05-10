@@ -30,25 +30,25 @@
 
 {% schema %}
 {
-    "name": "FAQ",
-    "blocks": [
+  "name": "FAQ",
+  "blocks": [
+    {
+      "name": "FAQ Items",
+      "type": "faq",
+      "settings": [
         {
-            "name": "FAQ Items",
-            "type": "faq",
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "title",
-                    "label": "Title",
-                    "default": "FAQ Title Example"
-                },
-                {
-                    "type": "richtext",
-                    "id": "answer",
-                    "label": "Answer"
-                }
-            ]
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "FAQ Title Example"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
         }
-    ]
+      ]
+    }
+  ]
 }
 {% endschema %}

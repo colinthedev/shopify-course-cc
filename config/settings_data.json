@@ -1,20 +1,91 @@
 {
   "current": {
-    "navbar_color": "#085b93",
+    "navbar_color": "#13e946",
+    "checkout_accent_color": "#6fabd4",
+    "nav_bg_color_primary": "#759781",
+    "nav_bg_color_sec": "#85c73c",
+    "nav_bg_color_tertiary": "#414973",
+    "nav_font_color_primary": "#f7fffb",
+    "nav_font_color_secondary": "#f033ff",
+    "bg_color_primary": "#ec90e6",
+    "bg_color_sec": "#57cc25",
+    "bg_color_tertiary": "#4071d6",
+    "heading_font_size": 22,
+    "color_primary": "#cf1f1f",
+    "color_sec": "#2253b9",
+    "color_tertiary": "#af0cf4",
+    "navbar_color_primary": "#087e4e",
+    "navbar_color_secondary": "#deca24",
     "sections": {
       "header": {
         "type": "header",
         "settings": {
         }
       },
+      "164149316990aca3cb": {
+        "type": "featured-collection",
+        "settings": {
+          "featured_collection": "frontpage",
+          "title": "Featured Collection"
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "dynamic_buttons_checkbox": true
+        }
+      },
       "page-faq-template": {
         "type": "page-faq-template",
+        "blocks": {
+          "76b7c1ea-b815-4d4f-9976-b10c0c467728": {
+            "type": "faq",
+            "settings": {
+              "title": "Hello world",
+              "answer": "<p>Apples<\/p>"
+            }
+          },
+          "ba387feb-3917-49f4-a097-b662d0eae6bc": {
+            "type": "faq",
+            "settings": {
+              "title": "FAQ Title Example",
+              "answer": "<p>Oranges<\/p>"
+            }
+          },
+          "fb374838-ccc0-4bfa-a2e9-69184661408e": {
+            "type": "faq",
+            "settings": {
+              "title": "FAQ Title Example",
+              "answer": ""
+            }
+          },
+          "a23196f7-756b-413c-b6d4-b9016a215c03": {
+            "type": "faq",
+            "settings": {
+              "title": "FAQ Title Example",
+              "answer": ""
+            }
+          }
+        },
+        "block_order": [
+          "76b7c1ea-b815-4d4f-9976-b10c0c467728",
+          "ba387feb-3917-49f4-a097-b662d0eae6bc",
+          "fb374838-ccc0-4bfa-a2e9-69184661408e",
+          "a23196f7-756b-413c-b6d4-b9016a215c03"
+        ],
         "settings": {
+        }
+      },
+      "page-template": {
+        "type": "page-template",
+        "settings": {
+          "container": "container",
+          "show_publish_date": true
         }
       }
     },
     "content_for_index": [
-
+      "164149316990aca3cb"
     ]
   },
   "presets": {

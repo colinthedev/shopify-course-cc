@@ -4,17 +4,17 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-12">
-            <img class="img-fluid" src="{{ product_image | img_url: "large" }}" alt="{{ product_image.alt }}"
+            <img class="img-fluid" src="{{ product_image | image_url }}" alt="{{ product_image.alt }}"
                 id="ProductMainImage">
             {% for image in product.image %}
-            <img src="{{ image.src | img_url: "medium" }}" alt="{{ image.alt }}">
+            <img src="{{ image.src | image_url }}" alt="{{ image.alt }}">
             {% endfor %}
         </div>
         <div class="col-md-6 col-12">
             <h1>{{ product.title }}</h1>
             <p>{{ current_product.price | money_with_currency }}</p>
 
-            {% form 'product', product, class:"product-form", id:"AddToCartForm" %}
+            {% form 'product', product, class: "product-form", id: "AddToCartForm" %}
             <div class="mb-3">
                 <select name="id" id="productSelect" class="form-select">
                     {% for variant in product.variants %}
@@ -47,14 +47,14 @@
 
 {% schema %}
 {
-    "name": "Product pages",
-    "settings": [
-        {
-            "type": "checkbox",
-            "id": "dynamic_buttons_checkbox",
-            "label": "Enable Dynamic Buttons",
-            "default": true
-        }
-    ]
+  "name": "Product pages",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "dynamic_buttons_checkbox",
+      "label": "Enable Dynamic Buttons",
+      "default": true
+    }
+  ]
 }
 {% endschema %}
